@@ -1,6 +1,7 @@
 # this is file is used for testing while integrating
 name: Python application
 
+# this is on push to github main, my github actions server wil be activated for testing the code
 on:
   push:
     branches: [ "main" ]
