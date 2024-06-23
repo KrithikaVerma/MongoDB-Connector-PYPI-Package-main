@@ -5,9 +5,10 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
-
+# this file deploys the code on PyPI 
 name: Upload Python Package
 
+# this is for deploy/publish only after release
 on:
   release:
     types: [published]
@@ -18,7 +19,7 @@ permissions:
 jobs:
   deploy:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # provided by Github action 
 
     steps:
     - uses: actions/checkout@v3
@@ -47,4 +48,4 @@ jobs:
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
         user: __token__
-        password: ${{ secrets.PYPI_API_TOKEN }}
+        password: ${{ secrets.PYPI_API_TOKEN }} # this token is going to be collected from PyPI repositiory
